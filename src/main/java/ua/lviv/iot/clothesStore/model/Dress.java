@@ -14,9 +14,21 @@ public class Dress extends AbstractClothes {
 
   public Dress(String brandName, String color, String countryOfManufacturer, Gender gender, Seasons season,
       double priceInUAH, int size, boolean suitableForCeremonialReception, double length) {
-    super(brandName, color, countryOfManufacturer, gender, season, priceInUAH, size,
-        suitableForCeremonialReception);
+    super(brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception);
     this.length = length;
+  }
+
+  @Override
+  public String toString() {
+    return "Dress [length=" + length + super.toString();
+  }
+
+  public String getHeaders() {
+    return super.getHeaders() + ", length";
+  }
+
+  public String toCSV() {
+    return super.toCSV() + ", " + length;
   }
 
 }
