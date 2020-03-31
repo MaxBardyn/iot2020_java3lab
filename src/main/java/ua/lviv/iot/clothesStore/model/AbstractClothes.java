@@ -9,6 +9,23 @@ public class AbstractClothes {
   protected double priceInUAH;
   protected int size;
   protected boolean suitableForCeremonialReception;
+  protected Integer id;
+
+  public AbstractClothes() {
+
+  }
+
+  public AbstractClothes(String brandName, String color, String countryOfManufacturer, Gender gender, Seasons season,
+      double priceInUAH, int size, boolean suitableForCeremonialReception) {
+    this.brandName = brandName;
+    this.color = color;
+    this.countryOfManufacturer = countryOfManufacturer;
+    this.gender = gender;
+    this.season = season;
+    this.priceInUAH = priceInUAH;
+    this.size = size;
+    this.suitableForCeremonialReception = suitableForCeremonialReception;
+  }
 
   public String getBrandName() {
     return brandName;
@@ -74,17 +91,12 @@ public class AbstractClothes {
     this.suitableForCeremonialReception = suitableForCeremonialReception;
   }
 
-  public AbstractClothes(String brandName, String color, String countryOfManufacturer, Gender gender, Seasons season,
-      double priceInUAH, int size, boolean suitableForCeremonialReception) {
-    super();
-    this.brandName = brandName;
-    this.color = color;
-    this.countryOfManufacturer = countryOfManufacturer;
-    this.gender = gender;
-    this.season = season;
-    this.priceInUAH = priceInUAH;
-    this.size = size;
-    this.suitableForCeremonialReception = suitableForCeremonialReception;
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
   }
 
   @Override
