@@ -2,7 +2,6 @@ package ua.lviv.iot.clothesStore.manager;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import ua.lviv.iot.clothesStore.model.AbstractClothes;
 
 public class ClothesManager {
