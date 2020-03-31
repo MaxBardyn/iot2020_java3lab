@@ -14,9 +14,21 @@ public class Jeans extends AbstractClothes {
 
   public Jeans(String brandName, String color, String countryOfManufacturer, Gender gender, Seasons season,
       double priceInUAH, int size, boolean suitableForCeremonialReception, TypeOfJeans typeOfJeans) {
-    super(brandName, color, countryOfManufacturer, gender, season, priceInUAH, size,
-        suitableForCeremonialReception);
+    super(brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception);
     this.typeOfJeans = typeOfJeans;
+  }
+
+  @Override
+  public String toString() {
+    return "Jeans [typeOfJeans=" + typeOfJeans + super.toString();
+  }
+
+  public String getHeaders() {
+    return super.getHeaders() + ", typeOfJeans";
+  }
+
+  public String toCSV() {
+    return super.toCSV() + ", " + typeOfJeans;
   }
 
 }

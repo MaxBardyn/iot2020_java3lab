@@ -1,4 +1,4 @@
-package ua.lviv.iot.clothesStore.model; 
+package ua.lviv.iot.clothesStore.model;
 
 public class AbstractClothes {
   protected String brandName;
@@ -85,6 +85,22 @@ public class AbstractClothes {
     this.priceInUAH = priceInUAH;
     this.size = size;
     this.suitableForCeremonialReception = suitableForCeremonialReception;
+  }
+
+  @Override
+  public String toString() {
+    return "AbstractClothes [brandName=" + brandName + ", color=" + color + ", countryOfManufacturer="
+        + countryOfManufacturer + ", gender=" + gender + ", season=" + season + ", priceInUAH=" + priceInUAH + ", size="
+        + size + ", suitableForCeremonialReception=" + suitableForCeremonialReception + "]";
+  }
+
+  public String getHeaders() {
+    return "brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception";
+  }
+
+  public String toCSV() {
+    return brandName + ", " + color + ", " + countryOfManufacturer + ", " + gender + ", " + season + ", " + priceInUAH
+        + ", " + size + ", " + suitableForCeremonialReception;
   }
 
 }

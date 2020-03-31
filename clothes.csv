@@ -1,0 +1,16 @@
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, typeOfJeans
+Levis, gray, USA, MAN, AUTUMN, 2499.99, 34, false, SLIM
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, typeOfJeans
+Zara, blue, Spain, WOMAN, SPRING, 1149.99, 32, false, BOYFRIEND
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, typeOfJeans
+Ralph  Lauren, black, USA, MAN, AUTUMN, 1999.99, 40, true, SKINNY
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, presenceOfCollar
+Hugo Boss, white, Germany, MAN, SPRING, 17000.0, 40, true, true
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, presenceOfCollar
+Massimo Dutti, black, Spain, WOMAN, SUMMER, 1699.0, 36, false, false
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, length
+Versace, yellow, Italy, WOMAN, SUMMER, 250000.0, 36, true, 165.7
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, length
+Louis Vuitton, blue, France, WOMAN, SPRING, 230000.0, 38, true, 160.2
+brandName, color, countryOfManufacturer, gender, season, priceInUAH, size, suitableForCeremonialReception, length
+Dior, white, France, WOMAN, SUMMER, 179000.0, 42, true, 158.0
