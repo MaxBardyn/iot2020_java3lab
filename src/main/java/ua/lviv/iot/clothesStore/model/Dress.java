@@ -1,5 +1,8 @@
 package ua.lviv.iot.clothesStore.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Dress extends AbstractClothes {
 
   private double length;
