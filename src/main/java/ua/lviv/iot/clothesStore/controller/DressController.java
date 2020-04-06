@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,7 +36,7 @@ public class DressController {
     return dresses.get(dressId);
   }
 
-  @PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
+  @PostMapping
   public Dress createDress(final @RequestBody Dress dress) {
     dress.setId(idCounter.incrementAndGet());
     dresses.put(dress.getId(), dress);
@@ -53,7 +52,12 @@ public class DressController {
   @PutMapping(path = "/{id}")
   public ResponseEntity<Dress> updateDress(@PathVariable("id") Integer dressId, final @RequestBody Dress dress) {
     dress.setId(dressId);
-    HttpStatus status = dresses.replace(dressId, dress) == null ? HttpStatus.NOT_FOUND : HttpStatus.OK;
-    return ResponseEntity.status(status).build();
+    Dress previousValue = dresses.get(dressId);
+    if (dresses.containsKey(dressId)) {
+      dresses.replace(dressId, dress);
+      return new ResponseEntity<Dress>(previousValue, HttpStatus.OK);
+    } else {
+      return new ResponseEntity<Dress>(HttpStatus.NOT_FOUND);
+    }
   }
 }
