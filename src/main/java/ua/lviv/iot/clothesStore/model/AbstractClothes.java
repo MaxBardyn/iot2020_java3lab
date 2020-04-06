@@ -1,6 +1,15 @@
 package ua.lviv.iot.clothesStore.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class AbstractClothes {
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  protected Integer id;
   protected String brandName;
   protected String color;
   protected String countryOfManufacturer;
@@ -9,7 +18,6 @@ public class AbstractClothes {
   protected double priceInUAH;
   protected int size;
   protected boolean suitableForCeremonialReception;
-  protected Integer id;
 
   public AbstractClothes() {
 
