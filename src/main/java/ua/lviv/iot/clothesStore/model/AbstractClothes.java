@@ -1,5 +1,7 @@
 package ua.lviv.iot.clothesStore.model;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +15,9 @@ public class AbstractClothes {
   protected String brandName;
   protected String color;
   protected String countryOfManufacturer;
+  @Enumerated(EnumType.STRING)
   protected Gender gender;
+  @Enumerated(EnumType.STRING)
   protected Seasons season;
   protected double priceInUAH;
   protected int size;
