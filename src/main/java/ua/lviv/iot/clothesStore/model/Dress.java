@@ -1,11 +1,38 @@
 package ua.lviv.iot.clothesStore.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Dress extends AbstractClothes {
-
   private double length;
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  protected Integer id;
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  @JoinColumn(name = "store_id")
+  @JsonIgnoreProperties("dresses")
+  private Store store;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "Dresses_Buyers", joinColumns = {
+      @JoinColumn(name = "dress_id", nullable = false) }, inverseJoinColumns = {
+          @JoinColumn(name = "buyer_id", nullable = true) })
+  @JsonIgnoreProperties("dresses")
+  private Set<Buyer> buyers;
 
   public Dress() {
     super();
@@ -23,6 +50,30 @@ public class Dress extends AbstractClothes {
 
   public void setLength(double length) {
     this.length = length;
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public Store getStore() {
+    return store;
+  }
+
+  public void setStore(Store store) {
+    this.store = store;
+  }
+
+  public Set<Buyer> getBuyers() {
+    return buyers;
+  }
+
+  public void setBuyers(Set<Buyer> buyers) {
+    this.buyers = buyers;
   }
 
   @Override

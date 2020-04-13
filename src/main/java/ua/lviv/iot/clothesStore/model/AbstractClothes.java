@@ -2,16 +2,11 @@ package ua.lviv.iot.clothesStore.model;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class AbstractClothes {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  protected Integer id;
+
   protected String brandName;
   protected String color;
   protected String countryOfManufacturer;
@@ -101,14 +96,6 @@ public class AbstractClothes {
 
   public void setSuitableForCeremonialReception(boolean suitableForCeremonialReception) {
     this.suitableForCeremonialReception = suitableForCeremonialReception;
-  }
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
   }
 
   @Override

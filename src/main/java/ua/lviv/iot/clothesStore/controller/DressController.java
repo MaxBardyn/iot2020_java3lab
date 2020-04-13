@@ -1,7 +1,6 @@
 package ua.lviv.iot.clothesStore.controller;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +20,6 @@ import ua.lviv.iot.clothesStore.model.Dress;
 @RestController
 public class DressController {
 
-  private AtomicInteger idCounter = new AtomicInteger();
   @Autowired
   private DressService dressService;
 
@@ -37,7 +35,6 @@ public class DressController {
 
   @PostMapping
   public Dress createDress(final @RequestBody Dress dress) {
-    dress.setId(idCounter.incrementAndGet());
     return dressService.createDress(dress);
   }
 
