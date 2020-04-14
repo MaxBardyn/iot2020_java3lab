@@ -3,8 +3,6 @@ package ua.lviv.iot.clothesStore.business;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import ua.lviv.iot.clothesStore.dataaccess.DressRepository;
@@ -32,12 +30,11 @@ public class DressService {
     dressRepository.deleteById(dressId);
   }
 
-  public ResponseEntity<Dress> updateDress(Integer dressId, Dress dress) {
+  public Dress updateDress(Integer dressId, Dress dress) {
     if (dressRepository.existsById(dressId)) {
-      dress.setId(dressId);
-      return new ResponseEntity<Dress>(dressRepository.save(dress), HttpStatus.OK);
+      return dressRepository.save(dress);
     } else {
-      return new ResponseEntity<Dress>(HttpStatus.NOT_FOUND);
+      return null;
     }
   }
 
